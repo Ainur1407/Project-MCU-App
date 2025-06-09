@@ -12,6 +12,8 @@ use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\PageCache;
 use CodeIgniter\Filters\PerformanceMetrics;
 use CodeIgniter\Filters\SecureHeaders;
+use App\Filters\SecurityFilter;
+use App\Filters\AuthFilter;
 
 class Filters extends BaseFilters
 {
@@ -30,6 +32,8 @@ class Filters extends BaseFilters
         "honeypot" => Honeypot::class,
         "invalidchars" => InvalidChars::class,
         "secureheaders" => SecureHeaders::class,
+        "security" => SecurityFilter::class,
+        "auth" => AuthFilter::class,
         "cors" => Cors::class,
         "forcehttps" => ForceHTTPS::class,
         "pagecache" => PageCache::class,
@@ -71,11 +75,12 @@ class Filters extends BaseFilters
      */
     public array $globals = [
         "before" => [
-            // 'honeypot',
-            // 'csrf',
-            // 'invalidchars',
+            //"csrf" => ["except" => ["api/*"]],
+            // "security",
         ],
         "after" => [
+            // "toolbar",
+            // "secureheaders",
             // 'honeypot',
             // 'secureheaders',
         ],

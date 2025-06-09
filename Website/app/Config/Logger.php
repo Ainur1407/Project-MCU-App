@@ -38,7 +38,7 @@ class Logger extends BaseConfig
      *
      * @var int|list<int>
      */
-    public $threshold = (ENVIRONMENT === 'production') ? 4 : 9;
+    public $threshold = 9;
 
     /**
      * --------------------------------------------------------------------------
@@ -48,7 +48,7 @@ class Logger extends BaseConfig
      * Each item that is logged has an associated date. You can use PHP date
      * codes to set your own date formatting
      */
-    public string $dateFormat = 'Y-m-d H:i:s';
+    public string $dateFormat = "Y-m-d H:i:s";
 
     /**
      * --------------------------------------------------------------------------
@@ -83,15 +83,15 @@ class Logger extends BaseConfig
          */
         FileHandler::class => [
             // The log levels that this handler will handle.
-            'handles' => [
-                'critical',
-                'alert',
-                'emergency',
-                'debug',
-                'error',
-                'info',
-                'notice',
-                'warning',
+            "handles" => [
+                "critical",
+                "alert",
+                "emergency",
+                "debug",
+                "error",
+                "info",
+                "notice",
+                "warning",
             ],
 
             /*
@@ -101,7 +101,7 @@ class Logger extends BaseConfig
              *
              * NOTE: Leaving it blank will default to 'log'.
              */
-            'fileExtension' => '',
+            "fileExtension" => "",
 
             /*
              * The file system permissions to be applied on newly created log files.
@@ -109,7 +109,7 @@ class Logger extends BaseConfig
              * IMPORTANT: This MUST be an integer (no quotes) and you MUST use octal
              * integer notation (i.e. 0700, 0644, etc.)
              */
-            'filePermissions' => 0644,
+            "filePermissions" => 0644,
 
             /*
              * Logging Directory Path
@@ -117,7 +117,7 @@ class Logger extends BaseConfig
              * By default, logs are written to WRITEPATH . 'logs/'
              * Specify a different destination here, if desired.
              */
-            'path' => '',
+            "path" => "",
         ],
 
         /*
